@@ -13,6 +13,6 @@ android {
 }
 
 dependencies {
-    provided "com.android.support:appcompat-v7:$rootProject.v4Version"
-    provided project(':fragmentation')
+    implementation "com.android.support:appcompat-v7:$rootProject.v4Version"
+    implementation project(':fragmentation')
 }
