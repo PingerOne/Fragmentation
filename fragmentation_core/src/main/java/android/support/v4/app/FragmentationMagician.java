@@ -208,8 +208,8 @@ public class FragmentationMagician {
             return;
         }
 
-        fragmentManagerImpl.mStopped = false;
+        //fragmentManagerImpl.mStopped = false;
         runnable.run();
-        fragmentManagerImpl.mStopped = true;
+        //fragmentManagerImpl.mStopped = true;
     }
 }
