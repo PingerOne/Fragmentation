@@ -3,7 +3,6 @@ package me.yokeyword.fragmentation.debug;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -17,6 +16,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import me.yokeyword.fragmentation.R;
 
 /**
