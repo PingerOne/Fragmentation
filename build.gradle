@@ -25,10 +25,10 @@ task clean(type: Delete) {
 }
 
 ext {
-    compileSdkVersion = 27
-    buildToolsVersion = "27.0.2"
+    compileSdkVersion = 28
+    targetSdkVersion = 28
     minSdkVersion = 14
-    targetSdkVersion = compileSdkVersion
 
-    v4Version = "27.0.2"
+    appcompat = 'androidx.appcompat:appcompat:1.0.0'
+    kotlin = 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.70'
 }
