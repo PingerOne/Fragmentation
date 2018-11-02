@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -14,4 +15,6 @@ android {
 
 dependencies {
     implementation 'org.greenrobot:eventbus:3.0.0'
+    //    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.70'
+
 }
