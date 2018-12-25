@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -12,5 +11,4 @@ android {
 dependencies {
     api project(':fragmentation_core')
     implementation rootProject.appcompat
-    implementation rootProject.kotlin
 }

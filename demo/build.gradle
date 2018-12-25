@@ -1,8 +1,5 @@
 apply plugin: 'com.android.application'
 
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
 static def gitLatestTag() {
     try {
         def cmd = 'git describe --abbrev=0 --tags'
@@ -57,12 +54,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     implementation rootProject.appcompat
-    implementation rootProject.kotlin
 
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0-rc01'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation rootProject.material
+    implementation rootProject.cardview
+    implementation rootProject.recyclerview
 
     implementation project(':fragmentation')
     implementation project(':fragmentation_swipeback')
