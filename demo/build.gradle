@@ -66,9 +66,9 @@ dependencies {
     implementation rootProject.recyclerview
 
     implementation project(':fragmentation')
-    implementation project(':fragmentation_swipeback')
+    implementation project(':fragmentation-swipeback')
     // EventBus
-    implementation project(':eventbus_activity_scope')
+    implementation project(':eventbus-activity-scope')
     implementation 'org.greenrobot:eventbus:3.0.0'
     //    apt 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 }

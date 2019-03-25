@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    api project(':fragmentation_core')
+    api project(':fragmentation-core')
     implementation rootProject.appcompat
 }
 

@@ -1,1 +1,1 @@
-include ':demo', ':fragmentation_core', ':fragmentation_swipeback', ':fragmentation', ':eventbus_activity_scope'
+include ':demo', ':fragmentation-core', ':fragmentation-swipeback', ':fragmentation', ':eventbus-activity-scope'
