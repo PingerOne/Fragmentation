@@ -6,8 +6,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.android.tools.build:gradle:3.3.2'
     }
 }
 
@@ -15,6 +14,7 @@ allprojects {
     repositories {
         jcenter()
         google()
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -23,10 +23,12 @@ task clean(type: Delete) {
 }
 
 ext {
-    compileSdkVersion = 27
-    buildToolsVersion = "27.0.2"
+    compileSdkVersion = 28
+    targetSdkVersion = 28
     minSdkVersion = 14
-    targetSdkVersion = compileSdkVersion
 
-    v4Version = "27.1.1"
+    appcompat = 'androidx.appcompat:appcompat:1.0.2'
+    material = 'com.google.android.material:material:1.0.0'
+    cardview = 'androidx.cardview:cardview:1.0.0'
+    recyclerview = 'androidx.recyclerview:recyclerview:1.0.0'
 }

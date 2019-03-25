@@ -1,4 +1,4 @@
-package android.support.v4.app;
+package androidx.fragment.app;
 
 
 import android.util.SparseArray;
@@ -208,8 +208,9 @@ public class FragmentationMagician {
             return;
         }
 
-        fragmentManagerImpl.mStopped = false;
+        // TODO
+//        fragmentManagerImpl.mStopped = false;
         runnable.run();
-        fragmentManagerImpl.mStopped = true;
+        //fragmentManagerImpl.mStopped = true;
     }
 }
