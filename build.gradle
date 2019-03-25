@@ -7,6 +7,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
 }
 
@@ -31,4 +33,10 @@ ext {
     material = 'com.google.android.material:material:1.0.0'
     cardview = 'androidx.cardview:cardview:1.0.0'
     recyclerview = 'androidx.recyclerview:recyclerview:1.0.0'
+
+    name = "fragmentation"
+    version = "1.0.0"
+    groupId = "com.pingerx"
+    siteUrl = "https://github.com/pingerx/Fragmentation"
+    gitUrl = "https://github.com/pingerx/Fragmentation.git"
 }

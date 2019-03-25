@@ -1,0 +1,109 @@
+// 构建和上传命令
+// gradlew build
+// gradlew install
+// gradlew bintrayUpload
+
+// 在project的build.gradle中添加上传到jcenter所需的插件
+//classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+//classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+
+// 在project的build.gradle中添加ext
+// 依赖形成的方式为：  groupId:artifactId:version
+//ext {
+//    name = "test-android"
+//    version = "1.0.0"
+//    groupId = "com.pingerx"
+//    siteUrl = "https://github.com/pingerx/test-android"
+//    gitUrl = "https://github.com/pingerx/test-android.git"
+//}
+
+// 在local.properties文件中配置bintray的用户和appkey
+// bintray.apikey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// bintray.user=pingerx
+
+
+// 引入上传插件
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+// 生成pom的版本号,如：1.0.0
+version = rootProject.ext.version
+// 生成pom的groupId，如：com.pingerx
+group = rootProject.ext.groupId
+
+// 生成源文件的任务
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+// 生成文档的任务
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+// 生成文档Jar的任务
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+// 打包内容
+artifacts {
+    archives sourcesJar
+}
+
+// 获取本地的local.properties，主要为了拿到bintray的账号和密码
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    // 读取配置文件中的用户名和key
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        userOrg = 'fungo'                   // bintray上的组织Id
+        repo = "maven"                      // bintray上创建的库的名称
+        name = rootProject.ext.name         // bintray上的项目名称
+        websiteUrl = rootProject.ext.siteUrl
+        vcsUrl = rootProject.ext.gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}
+
+
+// 在具体的library的build.gradle中引入
+//apply from: '../publishs.gradle'
+
+//install {
+//    repositories.mavenInstaller {
+//        pom.project {
+//            groupId rootProject.ext.groupId
+//            artifactId "test-android"
+//            packaging 'aar'
+//            name rootProject.ext.name
+//            url rootProject.ext.siteUrl
+//            licenses {
+//                license {
+//                    name 'The Apache Software License, Version 2.0'     // 开源协议名称
+//                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt' // 协议地址
+//                }
+//            }
+//            developers {
+//                developer {
+//                    id 'pingerx'        // bintray的用户id
+//                    name 'pingerx'      // bintray的用户名
+//                    email 'xmpinger@gmail.com'
+//                }
+//            }
+//            scm {
+//                connection rootProject.ext.gitUrl
+//                developerConnection rootProject.ext.gitUrl
+//                url rootProject.ext.siteUrl
+//            }
+//        }
+//    }
+//}

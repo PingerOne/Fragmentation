@@ -13,3 +13,35 @@ android {
 dependencies {
     implementation 'org.greenrobot:eventbus:3.0.0'
 }
+
+apply from: '../publishs.gradle'
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            groupId rootProject.ext.groupId
+            artifactId "eventbus-activity-scope"
+            packaging 'aar'
+            name rootProject.ext.name
+            url rootProject.ext.siteUrl
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'     // 开源协议名称
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt' // 协议地址
+                }
+            }
+            developers {
+                developer {
+                    id 'pingerx'        // bintray的用户id
+                    name 'pingerx'      // bintray的用户名
+                    email 'xmpinger@gmail.com'
+                }
+            }
+            scm {
+                connection rootProject.ext.gitUrl
+                developerConnection rootProject.ext.gitUrl
+                url rootProject.ext.siteUrl
+            }
+        }
+    }
+}
