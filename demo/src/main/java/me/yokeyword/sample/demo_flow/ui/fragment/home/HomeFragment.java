@@ -1,7 +1,9 @@
 package me.yokeyword.sample.demo_flow.ui.fragment.home;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import android.view.LayoutInflater;
@@ -52,6 +54,7 @@ public class HomeFragment extends BaseMainFragment implements Toolbar.OnMenuItem
         return view;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {

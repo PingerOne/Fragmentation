@@ -33,9 +33,15 @@ android {
         release {
             minifyEnabled false
 
-            signingConfig signingConfigs.releaseConfig
+            //signingConfig signingConfigs.releaseConfig
 
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    android {
+        lintOptions {
+            abortOnError false
         }
     }
 
