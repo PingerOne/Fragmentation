@@ -4,17 +4,17 @@
 
 * fragmentation
 
-	    implementation 'com.pingerx:fragmentation:1.0.0'
+	    implementation 'com.pingerx:fragmentation:andx.1.0.0'
 
-* fragmentation_core
+* fragmentation-core
 
-        implementation 'com.pingerx:fragmentation-core:1.0.0'
+        implementation 'com.pingerx:fragmentation-core:andx.1.0.0'
 
 
-* fragmentation_swipeback
+* fragmentation-swipeback
 
-        implementation 'com.pingerx:fragmentation-swipeback:1.0.0'
+        implementation 'com.pingerx:fragmentation-swipeback:andx.1.0.0'
 
-* eventbus_activity_scope
+* eventbus-activity-scope
 
-        implementation 'com.pingerx:eventbus-activity-scope:1.0.0'
+        implementation 'com.pingerx:eventbus-activity-scope:andx.1.0.0'

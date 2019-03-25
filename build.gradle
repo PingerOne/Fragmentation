@@ -35,7 +35,7 @@ ext {
     recyclerview = 'androidx.recyclerview:recyclerview:1.0.0'
 
     name = "fragmentation"
-    version = "1.0.0"
+    version = "andx.1.0.0"
     groupId = "com.pingerx"
     siteUrl = "https://github.com/pingerx/Fragmentation"
     gitUrl = "https://github.com/pingerx/Fragmentation.git"
