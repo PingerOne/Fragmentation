@@ -1,4 +1,7 @@
 ## Fragmentation类库Androidx版本
+ [ ![Download](https://api.bintray.com/packages/fungo/maven/fragmentation/images/download.svg) ](https://bintray.com/fungo/maven/fragmentation/_latestVersion)
+
+> [Fragmentation](https://github.com/YoKeyword/Fragmentation/)的AndroidX版本。
 
 #### 添加依赖
 
